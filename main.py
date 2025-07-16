@@ -23,6 +23,10 @@ app.add_middleware(
 # Cloud storage API endpoint
 CLOUD_STORAGE_API = "https://business.foodyqueen.com/admin/UploadMedia"
 
+@app.get("/health")
+async def health_check():
+    return {"status": "healthy", "service": "background-removal-api"}
+
 @app.post("/rbg")
 async def remove_bg(
     file: UploadFile = File(...),
