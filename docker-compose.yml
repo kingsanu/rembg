@@ -4,7 +4,7 @@ services:
   bg-remover:
     build: .
     ports:
-      - "8080:8000"
+      - "8083:8000"
     environment:
       - PORT=8000
     restart: unless-stopped
